@@ -8,9 +8,24 @@ public class App {
 
         LocalDateTime dateTime = LocalDateTime.now();
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        DateTimeFormatter formatter;
+        //System.out.println(dateTime.format(formatter));
+        System.out.println(dateFormat(dateTime));
 
+        System.out.println(dateTime.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
+
+        formatter = DateTimeFormatter.ofPattern("yyyy-dd-MM");
         System.out.println(dateTime.format(formatter));
 
+        formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy");
+        System.out.println(dateTime.format(formatter));
+
+        formatter = DateTimeFormatter.ofPattern("EEEE, MM dd, yyyy hh:ss");
+        System.out.println(dateTime.format(formatter));
+    }
+
+    public static String dateFormat(LocalDateTime dateTime){
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        return dateTime.format(dateTimeFormatter);
     }
 }
